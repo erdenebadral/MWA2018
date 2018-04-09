@@ -1,0 +1,38 @@
+<html>
+
+<h3>BMI Calculator</h3>
+<input type="radio" name="unit" value="english" /> english
+<input type="number" name="height" placeholder="Enter your height">
+<input type="number" name="weight" placeholder="Enter your weight">
+<button id="calculate">calculate</button>
+<div id="output"></div>
+
+</html>
+<script>
+    class BMICalculator{
+        constructor(height, weight){
+            this.height = height;
+            this.weight = weight;
+        }
+        calculate(){
+            return Math.round(this.weight / Math.pow(this.height, 2) * 10000);
+        }
+    }
+    window.onload = function(){
+        document.getElementById("calculate").addEventListener("click",(el,e)=>{
+        let height = document.getElementsByName("height")[0].value;
+        let weight = document.getElementsByName("weight")[0].value;
+        if(!height || !weight || height<0 || weight<0){
+            //console.log("aaaaaaaaaaaaa");
+            document.getElementById("output").innerHTML="Wrong input";
+        }
+        else{
+            //console.log("BBBBBB");
+            calc = new BMICalculator(height,weight);
+            document.getElementById("output").innerText=calc.calculate();
+        }
+        console.log("clicked");
+    });
+    }
+    
+</script>

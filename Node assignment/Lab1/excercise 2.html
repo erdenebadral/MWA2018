@@ -1,0 +1,16 @@
+<script>
+var library = [
+    { prof: 'Asaad Saad', course: 'WAP', courseID: 'CS452' },
+    { prof: 'Rakesh Shresta', course: 'WAA', courseID: 'CS545' },
+    { prof: 'Steve Nolle', course: 'SWE', courseID: 'CS425' }
+];
+var sorter = function (a, b) {
+        if (a.course > b.course)
+            return 1;
+        if (a.course < b.course)
+            return 2;
+        return 0;
+    };
+let sorted_library = library.sort(sorter);
+console.log(sorted_library);
+</script>

@@ -1,0 +1,30 @@
+<html>
+<ul>
+    <li data-time="5:17">ECMA6 Video</li>
+    <li data-time="8:22">Node Video</li>
+    <li data-time="3:34">Node Video</li>
+    <li data-time="4:29">ECMA6 Video</li>
+
+</ul>
+<hr>
+<h3>BMI Calculator</h3>
+<input type="radio" name="unit" value="english" /> english
+<input type="number" name="height" placeholder="Enter your height">
+<input type="number" name="weight" placeholder="Enter your weight">
+<button id="calculate">calculate</button>
+<div id="output"></div>
+
+</html>
+<script>
+    var reducer = (a, b) => a + b;
+    const items = Array.from(document.querySelectorAll('[data-time]'));
+    let filtered = items.filter(
+        text => text.innerHTML.includes("ECMA6")
+    ).map(
+        filter => filter.getAttribute('data-time')
+    ).map(
+        filter => parseInt(filter.split(":")[1])
+    ).reduce(reducer, 0);
+    console.log(items[0].innerHTML);
+    console.log(filtered);
+</script>

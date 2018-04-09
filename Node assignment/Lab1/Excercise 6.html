@@ -1,0 +1,10 @@
+<script>
+    String.prototype.filter = function (a) {
+        let rep = this;
+        for (b of a) {
+            rep = rep.replace(b, '***');
+        }
+        return rep;
+    }
+    console.log("This house is nice".filter(['house', 'nice']));
+</script>

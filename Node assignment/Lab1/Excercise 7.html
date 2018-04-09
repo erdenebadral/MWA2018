@@ -1,0 +1,20 @@
+<script>
+    Array.prototype.bubbleSort = function () {
+        let main = this;
+        var sorted = false
+        while (!sorted) {
+            sorted = true;
+            main.forEach(function (element, index, array) {
+                if (element > array[index + 1]) {
+                    array[index] = array[index + 1];
+                    array[index + 1] = element;
+                    sorted = false;
+                }
+            });
+        }
+        
+        return main
+    }
+    var vals = [3, 62, 234, 7, 23, 74, 23, 76, 92];
+    console.log(vals.bubbleSort());
+</script>

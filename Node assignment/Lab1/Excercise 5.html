@@ -1,0 +1,16 @@
+<script>
+    function Person(name) {
+        this.name = name;
+    }
+    Person.prototype.teach = function (subject) {
+        console.log(this.name + " is now teaching " + subject);
+    }
+
+    TeacherA = new Person("ASAAD");
+    TeacherA.teach("WAP");
+
+    TeacherB = new Person("SAAD");
+    TeacherB.teach("MWA");
+
+   
+</script>
