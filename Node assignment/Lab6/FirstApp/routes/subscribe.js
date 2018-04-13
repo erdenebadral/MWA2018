@@ -25,4 +25,5 @@ router.post('/',function(req, res, next){
     if(errors) res.render('subscribe/index', { title: 'Write your email please', csrf: req.csrfToken() });
     else res.render('subscribe/ty', { title: 'Thank you', mail:email });
 })
+
 module.exports = router;
