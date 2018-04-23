@@ -5,20 +5,10 @@ var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb://erdenebadral:683972@ds255889.mlab.com:55889/mytest';
-mongoose.connect(mongoDB,function(err){
-  if(err) throw err;
-  console.log("Working");
-});
-//mongoose.Promise = global.Promise;
-//var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var subscribeRouter = require('./routes/subscribe');
 
 const validator = require('express-validator');
 
@@ -40,7 +30,7 @@ app.use(validator());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/subscribe', subscribeRouter);
 
 
 

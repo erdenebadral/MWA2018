@@ -7,13 +7,10 @@ var logger = require('morgan');
 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://erdenebadral:683972@ds255889.mlab.com:55889/mytest';
-mongoose.connect(mongoDB,function(err){
-  if(err) throw err;
-  console.log("Working");
-});
-//mongoose.Promise = global.Promise;
-//var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 var indexRouter = require('./routes/index');

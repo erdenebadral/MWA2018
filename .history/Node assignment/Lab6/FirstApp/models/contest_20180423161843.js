@@ -7,10 +7,9 @@ contestSchema = new Schema({
     created_user:Number,
     students:[{
         registration_id:String,
-        registration_date:Date,
         user_id:Number,
+        registration_date:Date,
         total_score:Number,
-        submission_date:Date,
         submission:[{
             question_id:Number,
             answers:[String],
